@@ -25,6 +25,9 @@ async function getThumbnail(
     crop: vips.Interesting.none,
   });
 
+  console.log('im', im);
+  
+
   const outBuffer = im.webpsaveBuffer({ Q: 80 });
   const blob = new Blob([outBuffer], { type: `image/webp` });
   return URL.createObjectURL(blob);
